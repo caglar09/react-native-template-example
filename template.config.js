@@ -1,6 +1,6 @@
 module.exports = {
-	placeholderName: "MyExampleApp",
-	templateDir: "./template",
-	// Path to script, which will be executed after init
-	postInitScript: "./script.js",
+  placeholderName: 'MyExampleApp',
+  titlePlaceholder: 'Hello App Display Name',
+  templateDir: './template',
+  postInitScript: './script.js',
 };

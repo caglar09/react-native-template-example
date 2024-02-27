@@ -1,3 +1,19 @@
-#!/usr/bin/env node
+#!/usr/bin/env ts-node
+const ora = require('ora');
+const { inquire } = require('./scripts/generator');
 
-console.log("This is post init script");
+const spinner = ora('Optional libraries setup');
+
+new Promise((resolve) => {
+  spinner.start();
+  inquire(resolve);
+})
+  .then(() => {
+    spinner.succeed();
+  })
+  .catch((error) => {
+    spinner.fail(error);
+    throw new Error(
+      'Something went wrong during the post init script execution',
+    );
+  });
